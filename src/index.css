@@ -1,0 +1,216 @@
+body {
+    padding-top: 65px;
+}
+
+.h-50vh {
+    height: 58vh;
+}
+
+.placeButton {
+    display: flex;
+    justify-content: center;
+}
+
+.purifierCategory img {
+    height: 180px;
+    object-fit: contain;
+}
+
+.purifierCategory .card-body {
+    background-color: rgba(49, 49, 185, 0.899);
+}
+
+/* brand logo slider */
+
+.brand-carousel {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.brand-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.brand-carousel .group {
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 25s infinite linear;
+    padding-right: 1em;
+}
+
+.brand-carousel .group .card {
+    flex: 0 0 160px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.brand-carousel .group .card img {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-carousel:hover .group {
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    from {
+        translate: 0;
+    }
+
+    to {
+        translate: -100%;
+    }
+}
+
+/* Gallery */
+.gallery-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transform: 0.3;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+/* Login */
+.authBg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)), url("/login_bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+}
+
+/* Reusable Components */
+.flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Add Product css */
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Shop - All Products*/
+/* .filter [aria-expanded="true"] i {
+    transform: rotate(180deg);
+    transition: 0.3s;
+} */
+
+.filter-toggle i {
+    transition: transform 0.3s;
+}
+
+.filter-toggle:not(.collapsed) i {
+    transform: rotate(180deg);
+}
+
+.productCard img {
+    height: 220px;
+    width: auto;
+    object-fit: contain;
+}
+
+.product-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-btn {
+    font-size: 12px;
+    padding: 4px 6px;
+}
+
+/* Component */
+/* adminSidebar */
+
+.sidebar {
+    position: fix;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 250px;
+    background-color: blue;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: orange;
+    color: black !important;
+}
+
+
+/* admin */
+.adminProductTable {
+    min-width: 900px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+@media(max-width:768px) {
+    .navbar-nav {
+        padding: 10px 0 0 10px;
+        margin-top: 10px 0;
+    }
+
+    .carousel-caption {
+        display: block;
+    }
+}
+
+@media (min-width:576px) {
+    .feature-border {
+        border-right: 1px solid #c0c4c8;
+    }
+}
+
+@media(max-width:576px) {
+    .contactField {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .carousel-caption {
+        display: none;
+    }
+
+    .sidebar {
+        width: 60px;
+        align-items: center;
+    }
+
+    .sidebar span {
+        display: none;
+    }
+
+    .logout button span {
+        display: none;
+    }
+}
