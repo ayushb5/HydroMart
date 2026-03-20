@@ -19,11 +19,12 @@ function Products() {
         axios.get("https://69ae5d0fc8b37f4998353805.mockapi.io/products")
             .then(res => { setProductData(res.data); setLoading(false); })
             .catch(err => { console.log(err); setLoading(false); });
-    }
+    };
 
     useEffect(() => {
         getData();
-    }, [])
+    }, []);
+    
     return (
         <>
             <div className="container">
