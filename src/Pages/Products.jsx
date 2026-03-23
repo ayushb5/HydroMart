@@ -24,7 +24,7 @@ function Products() {
     useEffect(() => {
         getData();
     }, []);
-    
+
     return (
         <>
             <div className="container">

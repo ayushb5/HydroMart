@@ -1,3 +1,4 @@
+import { useFormik } from "formik";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 function Login() {
@@ -14,6 +15,17 @@ function Login() {
         email: "admin123@gmail.com",
         password: "Admin@9876"
     };
+
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: ''
+        },
+
+        onSubmit: (values) => {
+            console.log(values);
+        }
+    });
 
     function handleChange(e) {
         setloginData({
@@ -47,14 +59,14 @@ function Login() {
                 <div className="container flexbox vh-100">
                     <div className="card shadow p-4" style={{ width: "500px" }}>
                         <h2 className="text-center mb-4">Login</h2>
-                        <form onSubmit={handleLogin}>
+                        <form onSubmit={formik.handleSubmit}>
                             <div className="form-floating mb-3">
-                                <input type="email" id="email" onChange={handleChange} value={loginData.email} className="form-control" placeholder="Email" />
+                                <input type="email" id="email" onChange={formik.handleChange} value={formik.values.email} className="form-control" placeholder="Email" />
                                 <label htmlFor="email">Email</label>
                             </div>
                             <div className="input-group mb-3">
                                 <div className="form-floating">
-                                    <input type={showPass ? "text" : "password"} id="password" className="form-control" onChange={handleChange} value={loginData.password} placeholder="Password" />
+                                    <input type={showPass ? "text" : "password"} id="password" className="form-control" onChange={formik.handleChange} value={formik.values.password} placeholder="Password" />
                                     <label htmlFor="password">Password</label>
                                 </div>
                                 <span className="input-group-text bg-white cursor-pointer"
