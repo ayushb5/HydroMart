@@ -1,5 +1,5 @@
 import * as Yup from "yup";
-
+// Login Schema
 export const loginSchema = Yup.object({
   email: Yup.string()
     .trim()
