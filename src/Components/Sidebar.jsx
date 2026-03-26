@@ -39,9 +39,6 @@ function Sidebar() {
                         </button>
                     </div>
                 </div>
-                <div className="flex-grow-1 p-4 bg-light">
-                    <Outlet />
-                </div>
             </div>
         </>
     )
