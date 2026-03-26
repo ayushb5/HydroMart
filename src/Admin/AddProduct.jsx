@@ -20,7 +20,12 @@ function AddProduct() {
     });
 
     function handleChange(e) {
-        setProductData({ ...productData, [e.target.id]: e.target.value });
+        let value = e.target.value;
+
+        if (e.target.id === "capacity") {
+            value = Number(value);
+        }
+        setProductData({ ...productData, [e.target.id]: value });
     }
 
     function handleSubmit(e) {
@@ -125,10 +130,10 @@ function AddProduct() {
                                         <label htmlFor="capacity" className="form-label">Capacity</label>
                                         <select id="capacity" onChange={handleChange} value={productData.capacity} className="form-select">
                                             <option value="">Select Capacity</option>
-                                            <option value="7 L">7 L</option>
-                                            <option value="8 L">8 L</option>
-                                            <option value="9 L">9 L</option>
-                                            <option value="10 L">10 L</option>
+                                            <option value="7">7 L</option>
+                                            <option value="8">8 L</option>
+                                            <option value="9">9 L</option>
+                                            <option value="10">10 L</option>
                                         </select>
                                     </div>
                                 </div>
