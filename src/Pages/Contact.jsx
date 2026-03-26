@@ -59,7 +59,7 @@ function Contact() {
                         </form>
                     </div>
                     <div className="col-lg-6 mt-2">
-                        <div className="container p-2 h-50vh text-light" style={{ backgroundColor: "rgb(58, 13, 135)" }}>
+                        <div className="container p-2 h-60vh text-light" style={{ backgroundColor: "rgb(58, 13, 135)" }}>
                             <h3 className='text-center pt-2'>Visit Us</h3>
 
                             <div className="d-flex flex-column mt-4">
