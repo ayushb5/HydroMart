@@ -7,14 +7,13 @@ function AdminDashboard() {
     const role = localStorage.getItem("role") || sessionStorage.getItem("role");
     const [data, setData] = useState([]);
     function getProductData() {
-        axios.get("https://69ae5d0fc8b37f4998353805.mockapi.io/products")
+        axios.get(import.meta.env.VITE_BASE_URL + "/products")
             .then((res) => {
                 setData(res.data);
             })
     }
     let userCount = 100, orderCount = 50;
 
-    // Card
     const cards = [
         {
             count: userCount,
