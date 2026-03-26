@@ -21,14 +21,14 @@ function AllProduct() {
     }
 
     function getData() {
-        axios.get("https://69ae5d0fc8b37f4998353805.mockapi.io/products")
+        axios.get(import.meta.env.VITE_BASE_URL + "/products")
             .then(res => { setProductData(res.data) })
             .catch(err => { console.log(err) });
     }
 
     function getDataById(id) {
         setUserId(id);
-        axios.get("https://69ae5d0fc8b37f4998353805.mockapi.io/products/" + id)
+        axios.get(import.meta.env.VITE_BASE_URL + "/products" + id)
             .then((res) => {
                 setData(res.data);
             })
@@ -36,7 +36,7 @@ function AllProduct() {
 
     function handleUpdate(e) {
         e.preventDefault();
-        axios.put("https://69ae5d0fc8b37f4998353805.mockapi.io/products/" + userId, {
+        axios.put(import.meta.env.VITE_BASE_URL + "/products/" + userId, {
             ...data, id: userId
         })
             .then((res) => {
@@ -48,7 +48,7 @@ function AllProduct() {
 
     function handleDelete() {
         if (userId) {
-            axios.delete("https://69ae5d0fc8b37f4998353805.mockapi.io/products/" + userId)
+            axios.delete(import.meta.env.VITE_BASE_URL + "/products/" + userId)
                 .then((res) => {
                     alert("Data Deleted Succesfully.");
                     console.log(res.data);
@@ -91,12 +91,14 @@ function AllProduct() {
                                         <td>₹{Number(data.price).toLocaleString()}</td>
                                         <td>₹{Number(data.discount).toLocaleString()}</td>
                                         <td>
-                                            <button className="btn btn-primary me-2" onClick={() => getDataById(data.id)} data-bs-toggle="modal" data-bs-target="#updateModal">
-                                                <i className="bi bi-pencil-fill"></i>
-                                            </button>
-                                            <button className="btn btn-danger" onClick={() => setUserId(data.id)} data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                <i className="bi bi-trash-fill"></i>
-                                            </button>
+                                            <div className="d-flex">
+                                                <button className="btn btn-sm btn-primary me-2" onClick={() => getDataById(data.id)} data-bs-toggle="modal" data-bs-target="#updateModal">
+                                                    <i className="bi bi-pencil-fill"></i>
+                                                </button>
+                                                <button className="btn btn-sm btn-danger" onClick={() => setUserId(data.id)} data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <i className="bi bi-trash-fill"></i>
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 )
@@ -181,10 +183,10 @@ function AllProduct() {
                                                 <label htmlFor="capacity" className="form-label">Capacity</label>
                                                 <select id="capacity" onChange={handleChange} value={data.capacity} className="form-select">
                                                     <option value="">Select Capacity</option>
-                                                    <option value="7 L">7 L</option>
-                                                    <option value="8 L">8 L</option>
-                                                    <option value="9 L">9 L</option>
-                                                    <option value="10 L">10 L</option>
+                                                    <option value="7">7 L</option>
+                                                    <option value="8">8 L</option>
+                                                    <option value="9">9 L</option>
+                                                    <option value="10">10 L</option>
                                                 </select>
                                             </div>
                                         </div>
