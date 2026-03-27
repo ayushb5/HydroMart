@@ -19,19 +19,22 @@ function AdminDashboard() {
             count: userCount,
             title: "Registered Users",
             icon: "bi-person-fill",
-            color: "#F5B427"
+            color: "#F5B427",
+            path: null
         },
         {
             count: data.length,
             title: "Products",
             icon: "bi-box-seam-fill",
-            color: "#27F557"
+            color: "#27F557",
+            path: "/admin/allProducts"
         },
         {
             count: orderCount,
             title: "Total Orders",
             icon: "bi-cart-fill",
-            color: "#27CCF5"
+            color: "#27CCF5",
+            path: null
         }
     ]
 
@@ -47,7 +50,7 @@ function AdminDashboard() {
             <div className="container">
                 <div className="allCards d-flex align-items-center justify-content-center gap-5 flex-wrap mt-5">
                     {cards.map((card, index) => (
-                        <div key={index} className="card w-auto d-inline-block p-3 mb-2 cursor-pointer" style={{ backgroundColor: `${card.color}` }}>
+                        <div key={index} onClick={() => card.path && navigate(card.path)} className="card w-auto d-inline-block p-3 mb-2 cursor-pointer" style={{ backgroundColor: `${card.color}` }}>
                             <div className="row align-items-center">
                                 <div className="col-auto text-center">
                                     <h2>{card.count}</h2>
