@@ -1,11 +1,18 @@
 import { NavLink, useNavigate } from "react-router-dom"
 import HydroMart from "/HydroMart.png"
+import { useState, useEffect } from "react";
 
 function Header() {
 
     const navigate = useNavigate();
 
     const role = localStorage.getItem("role") || sessionStorage.getItem("role");
+
+    const [cart, setCart] = useState([]);
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem("cart")) || [];
+        setCart(data);
+    }, [])
 
     function handleLogout() {
         localStorage.removeItem("role");
@@ -70,7 +77,16 @@ function Header() {
 
                         </ul>
 
-                        <div className="d-flex justify-content-center">
+                        <div className="d-flex justify-content-center gap-3">
+                            <NavLink to={"/cart"} className="text-decoration-none text-dark">
+                                <button className="btn fs-5 cart-btn">
+                                    <span className="cart-icon-wrapper me-1">
+                                        <i className="bi bi-cart"></i>
+                                        <span className="cart-count">{cart.length}</span>
+                                    </span>
+                                    Cart
+                                </button>
+                            </NavLink>
                             {role ? (
                                 <>
                                     {role === "admin" && (
