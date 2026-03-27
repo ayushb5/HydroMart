@@ -4,7 +4,6 @@ import './App.css'
 import MainLayout from './Layout/MainLayout'
 import AdminLayout from './Layout/AdminLayout'
 
-import Header from './Components/Header'
 import Home from './Pages/Home'
 import Products from './Pages/Products'
 import About from './Pages/About'
@@ -12,12 +11,11 @@ import Gallery from './Pages/Gallery'
 import Contact from './Pages/Contact'
 import Login from './Authentication/Login'
 import Signup from './Authentication/Signup'
-import Footer from './Components/Footer'
+import Cart from './Components/CartPage'
 
 import AdminDashboard from './Admin/AdminDashboard'
 import AddProduct from './Admin/AddProduct'
 import AllProduct from './Admin/AllProduct'
-import Sidebar from './Components/Sidebar'
 
 function App() {
 
@@ -33,6 +31,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/cart" element={<Cart />} />
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>
