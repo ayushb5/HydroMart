@@ -57,6 +57,7 @@ function AddProduct() {
     return (
         <>
             <div className="container">
+                <h1 className="text-center">Add your new Product</h1>
                 <div className="row justify-content-center">
                     <div className="col-lg-10">
                         <form className="p-3" onSubmit={handleSubmit}>
