@@ -1,7 +1,12 @@
 import axios from "axios"
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addToCart } from "../State/cartSlice";
 
 function Products() {
+    let dispatch = useDispatch();
+
     const filters = {
         brand: ["Kent", "Aquaguard", "Livpure", "Pureit", "AO Smith", "Blue Star", "Havells", "LG"],
         technology: ["RO (Reverse Osmosis)", "UV (Ultraviolet)", "UF (Ultrafiltration)", "RO + UV", "RO + UV + UF", "RO + UV + UF + TDS", "RO + Alkaline", "RO + Copper", "Gravity (UF)"],
@@ -40,6 +45,13 @@ function Products() {
             }
             return updated;
         })
+    }
+    const navigate = useNavigate();
+    function createSlug(text) {
+        return text
+            .toLowerCase()
+            .replace(/[^\w ]+/g, "")
+            .replace(/ +/g, "-");
     }
     const keyMap = {
         brand: "brandName",
@@ -95,6 +107,11 @@ function Products() {
         return 0;
     })
 
+    function addPToCart(item) {
+        const product = { ...item, quantity: 1 }
+        dispatch(addToCart(product))
+    }
+
     // Pagination
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
@@ -108,6 +125,7 @@ function Products() {
     useEffect(() => {
         getData();
         setCurrentPage(1);
+        console.log(productData);
     }, [search, selectedFilters, sortBy]);
 
     return (
@@ -179,7 +197,12 @@ function Products() {
                                 {currentPosts.map((product, i) => {
                                     return (
                                         <div className="col-lg-3" key={i}>
-                                            <div className="card h-100 productCard">
+                                            <div className="card h-100 productCard"
+                                                onClick={() => {
+                                                    const slug = createSlug(product.productName);
+                                                    navigate(`/product/${product.id}/${slug}`);
+                                                }}
+                                            >
                                                 <div className="card-body">
                                                     <img src={product.productImgUrl} className="img-fluid" alt="" />
                                                     <p className="mt-2 mb-0 fw-bold">{product.brandName}</p>
@@ -189,12 +212,12 @@ function Products() {
                                                         <span className="fw-semibold" style={{ fontSize: "14px" }}>{product.capacity} L</span>
                                                     </div>
                                                     <div className="d-flex align-items-center gap-3 mt-2">
-                                                        <h4 className="m-0">₹{Number(product.price).toLocaleString()}</h4>
-                                                        <del className="fs-5">₹{(Number(product.price) + Number(product.discount)).toLocaleString()}</del>
+                                                        <h4 className="m-0 text-primary">₹{Number(product.price).toLocaleString()}</h4>
+                                                        <del className="fs-5 text-danger small">₹{(Number(product.price) + Number(product.discount)).toLocaleString()}</del>
                                                     </div>
 
                                                     <div className="d-flex justify-content-center mt-3">
-                                                        <button className="btn btn-sm btn-outline-warning text-dark border-dark product-btn"><i class="bi bi-cart fs-6"></i> Add to Cart</button>
+                                                        <button className="btn btn-sm btn-outline-warning text-dark border-dark product-btn" onClick={(e) => { e.stopPropagation(); addPToCart(product) }}><i class="bi bi-cart fs-6"></i> Add to Cart</button>
                                                     </div>
                                                 </div>
                                             </div>
