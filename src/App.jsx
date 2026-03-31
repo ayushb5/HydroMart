@@ -12,6 +12,7 @@ import Contact from './Pages/Contact'
 import Login from './Authentication/Login'
 import Signup from './Authentication/Signup'
 import Cart from './Components/CartPage'
+import ProductDetail from './Pages/ProductDetail'
 
 import AdminDashboard from './Admin/AdminDashboard'
 import AddProduct from './Admin/AddProduct'
@@ -32,6 +33,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/product/:id/:slug" element={<ProductDetail />} />
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>
