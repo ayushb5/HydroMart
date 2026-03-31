@@ -11,3 +11,7 @@ Technology Stack:
 5. ReactJs
 
 For API - used mockapi
+
+Layouts-
+    1. Main Layout :- for users
+    2. Admin Layout :- for admins
