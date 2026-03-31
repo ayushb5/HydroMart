@@ -9,3 +9,5 @@ Technology Stack:
 3. Bootstrap
 4. JavaScript
 5. ReactJs
+
+For API - used mockapi
