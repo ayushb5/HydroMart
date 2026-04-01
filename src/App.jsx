@@ -13,6 +13,7 @@ import Login from './Authentication/Login'
 import Signup from './Authentication/Signup'
 import Cart from './Components/CartPage'
 import ProductDetail from './Pages/ProductDetail'
+import BillingPage from './Components/BillingPage'
 
 import AdminDashboard from './Admin/AdminDashboard'
 import AddProduct from './Admin/AddProduct'
@@ -34,6 +35,9 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/product/:id/:slug" element={<ProductDetail />} />
+            <Route path="/checkout" element={<BillingPage />} />
+
+
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>
