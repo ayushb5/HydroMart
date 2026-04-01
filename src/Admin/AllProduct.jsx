@@ -28,7 +28,7 @@ function AllProduct() {
 
     function getDataById(id) {
         setUserId(id);
-        axios.get(import.meta.env.VITE_BASE_URL + "/products" + id)
+        axios.get(import.meta.env.VITE_BASE_URL + "/products/" + id)
             .then((res) => {
                 setData(res.data);
             })
