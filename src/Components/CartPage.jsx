@@ -86,7 +86,14 @@ function CartPage() {
                                     <strong>Total</strong>
                                     <strong>₹{total.toLocaleString()}</strong>
                                 </div>
-                                <button className="btn btn-primary w-100">Proceed to Checkout</button>
+                                <button className="btn btn-primary w-100" disabled={total == shipping} onClick={() => navigate("/checkout", {
+                                    state: {
+                                        subtotal,
+                                        shipping,
+                                        tax,
+                                        total
+                                    }
+                                })}>Proceed to Checkout</button>
                             </div>
                         </div>
                     </div>
