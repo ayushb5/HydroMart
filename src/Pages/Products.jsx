@@ -108,8 +108,7 @@ function Products() {
     })
 
     function addPToCart(item) {
-        const product = { ...item, quantity: 1 }
-        dispatch(addToCart(product))
+        dispatch(addToCart(item))
     }
 
     // Pagination
