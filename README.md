@@ -20,7 +20,7 @@ https://hydromart.netlify.app/
 
 ---
 
-<img width="1731" height="1292" alt="Image" src="https://github.com/user-attachments/assets/d9a95192-f80e-451f-ac61-a5898e4f077e" />
+<img width="1898" height="887" alt="Image" src="https://github.com/user-attachments/assets/58741211-531c-450b-adc0-e8efb1996e63" />
 
 ---
 
