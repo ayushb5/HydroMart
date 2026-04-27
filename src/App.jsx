@@ -18,6 +18,8 @@ import BillingPage from './Components/BillingPage'
 import AdminDashboard from './Admin/AdminDashboard'
 import AddProduct from './Admin/AddProduct'
 import AllProduct from './Admin/AllProduct'
+import Payment from './Components/Payment'
+import OrderSuccess from './Components/OrderSuccess'
 
 function App() {
 
@@ -36,8 +38,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/product/:id/:slug" element={<ProductDetail />} />
             <Route path="/checkout" element={<BillingPage />} />
-
-
+            <Route path='/payment' element={<Payment />} />
+            <Route path='/order-success' element={<OrderSuccess />} />
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>
