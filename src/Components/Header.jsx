@@ -38,22 +38,11 @@ function Header() {
                                     return isActive ? "nav-link text-primary fw-bold" : "nav-link"
                                 }}>Home</NavLink>
                             </li>
-                            <li className="nav-item dropdown">
-                                <NavLink to="/products" className={({ isActive }) => {
-                                    return isActive ? "nav-link dropdown-toggle text-primary fw-bold" : "nav-link dropdown-toggle"
-                                }} role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</NavLink>
 
-                                <ul className="dropdown-menu">
-                                    <li>
-                                        <NavLink to={"/products"} className="dropdown-item">
-                                            All Products
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={"/compare"} className="dropdown-item">
-                                            Compare Products                                        </NavLink>
-                                    </li>
-                                </ul>
+                            <li className="nav-item">
+                                <NavLink to="/products" className={({ isActive }) => {
+                                    return isActive ? "nav-link text-primary fw-bold" : "nav-link"
+                                }}>Shop</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/gallery" className={({ isActive }) => {
