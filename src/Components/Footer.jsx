@@ -57,8 +57,8 @@ function Footer() {
                         <a href="" className="text-white me-4">
                             <i className="bi bi-facebook"></i>
                         </a>
-                        <a href="" class="text-white me-4">
-                            <i class="bi bi-google"></i>
+                        <a href="" className="text-white me-4">
+                            <i className="bi bi-google"></i>
                         </a>
                         <a href="" className="text-white me-4">
                             <i className="bi bi-instagram"></i>
