@@ -12,9 +12,13 @@ https://hydromart.netlify.app/
 
 ## Admin Page (Screenshots)
 
-<img width="1919" height="867" alt="Image" src="https://github.com/user-attachments/assets/6d72bad2-c76a-4b38-9af7-19ae607ab3d2" />
+## <img width="1919" height="867" alt="Image" src="https://github.com/user-attachments/assets/6d72bad2-c76a-4b38-9af7-19ae607ab3d2" />
 
-<img width="1731" height="1292" alt="Image" src="https://github.com/user-attachments/assets/d04cc126-25fc-47e2-a200-97705e303069" />
+---
+
+## <img width="1731" height="1292" alt="Image" src="https://github.com/user-attachments/assets/d04cc126-25fc-47e2-a200-97705e303069" />
+
+---
 
 <img width="1731" height="1292" alt="Image" src="https://github.com/user-attachments/assets/d9a95192-f80e-451f-ac61-a5898e4f077e" />
 
